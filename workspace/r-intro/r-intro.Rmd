@@ -1,30 +1,58 @@
+---
+title: "R-Intro"
+output:
+  html_document:
+    df_print: paged
+author: "Max Burchett [william.burchett]"
+date: "2/7/21"
+---
+```{r}
+github.monte = "https://raw.githubusercontent.com/MonteShaffer/";
+include.me = paste0(github.monte, "humanVerseWSU/master/humanVerseWSU/R/functions-maths.R");
+
+library(devtools);  # install.packages("devtools", dependencies=TRUE);
+                    # do this in Rgui with RStudio closed (best outcome)
+                    # source_url is not necessary, 3 extra tidyverse packages
+                    # it was the first/most common solution on Google
+source_url(include.me);
+```
+
+```{r}
+
+which.github = "local";
+
+github.local = "/wsustats/github/maxburchett/WSU_STATS419_2021/";
+
+```
 
 
 
+```{r}
 library(plotrix);
 library(pracma);
 
-
-which.github = "local";
-github.local = "/wsustats/github/maxburchett/WSU_STATS419_2021/";
-
 is.wholenumber = function(x, tol = .Machine$double.eps^0.5)  
-{
+  {
   abs(x - round(x)) < tol;
-}
+  }
 
 is.wholenumber(1) # is TRUE
 
 
 handShake = function(n=1, plotMe=TRUE)
-{
+  {
   if (n < 1) { stop("n must be greater than zero"); }
   if(!is.wholenumber(n)) { stop("n must be an integer"); }
   h = n*(n-1)/2;
   
   if(plotMe)
-  {
+    {
+    # can you draw a circle
+    # can you loop through "n" points
+    # ... and connect "n-1" elements
+    # for (i in 1:n) ... for(j in 1:(n-1))
     
+    #plot(n,h);
     plot(0,0,type="n",main=paste0("handShakes for ",n," people"),xlim=c(-6,6),ylim=c(-6,6),asp=1,xlab="",ylab="",xaxt="n",yaxt="n",bty="n");
     r=5
     xs=ys=c();
@@ -36,7 +64,7 @@ handShake = function(n=1, plotMe=TRUE)
     xs=c(xs,x);
     ys=c(ys,y);
     for (p in 2:n)
-    {
+      {
       xn=x*cos(deg2rad(angle))-y*sin(deg2rad(angle));
       yn=y*cos(deg2rad(angle))-x*sin(deg2rad(angle));
       points(xn,yn,cex=p);
@@ -45,30 +73,31 @@ handShake = function(n=1, plotMe=TRUE)
       xs=c(xs,x);
       ys=c(ys,y);
       
-    }
+      }
     print(xs);
     print(ys);
     for (source in 1:n)
-    {
-      for (target in 1:n)
       {
+      for (target in 1:n)
+        {
         segments(xs[source],ys[source],xs[target],ys[target]);
+        }
       }
+    
+    
     }
-    
-    
-  }
   
   h;
   
-}
+  }
+```
 
 
 
+```{r}
 
- 
 computeDeterminant2 = function(myMatrix)
-{
+  {
   nrow=nrow(myMatrix);
   ncol=ncol(myMatrix);
   if (nrow != ncol) {stop("Matrix must be square");}
@@ -78,11 +107,11 @@ computeDeterminant2 = function(myMatrix)
   b=myMatrix[1,2]
   c=myMatrix[2,1]
   d=myMatrix[2,2]
-  
+
   a*d - b*c;
-}
+  }
 computeDeterminant3 = function(myMatrix)
-{
+  {
   nrow=nrow(myMatrix);
   ncol=ncol(myMatrix);
   if (nrow != ncol) {stop("Matrix must be square");}
@@ -102,8 +131,12 @@ computeDeterminant3 = function(myMatrix)
   a*computeDeterminant2(matrix(c(e,f,h,i),nrow=2, byrow=TRUE)) -  b*computeDeterminant2(matrix(c(d,f,g,i),nrow=2, byrow=TRUE)) +  c*computeDeterminant2(matrix(c(d,e,g,h),nrow=2, byrow=TRUE))
   
   
-}
+  }
+```
 
+
+
+```{r}
 
 myMatrix = matrix(c(1,7,9,
                     4,5,2,
@@ -112,42 +145,49 @@ myMatrix = matrix(c(1,7,9,
 zeroIsh(det(myMatrix))
 zeroIsh(computeDeterminant3(myMatrix))
 
+```
 
 
+```{r}
 
 
 countLetterInString = function(str,letter)
-{
+  {
   nchar(as.character(str)) -nchar(gsub(letter, "", str.fixed=TRUE));
-}
+  }
 
 alphabetCounter = function(str)
-{
+  {
   str = gsub("[[:space:]]", "", str);
   str = tolower(str);
   df = data.frame(matrix(NA, nrow=1, ncol=27, byrow=TRUE))
   colNames(df) = c(letters, "OTHER")
   for (letter in letters)
-  {
+    {
     idx = which(letters, letter);
     df[1,idx] = countLetterInString(str, letter);
     str=gsub(letter,"", fixed=TRUE);
-  }
+    }
   df[1,27]=nchar(str);
   df;
-}
+  }
 
+```
 
+```{r}
+#path.declaration = paste0(github.local, "datasets/declaration/");
 
+#final = readChar(paste0(path.declaration,"final.txt"),99999);
+#draft = readChar(paste0(path.declaration,"draft.txt"),99999);
 
+#df = NULL;
+#df = rbind(df, alphabetCounter(draft))
+#df = rbind(df,alphabetCounter(final))
+#rownames(df)=c("draft","final")
+```
 
-path.declaration = paste0(github.local, "datasets/declaration/");
+```{r}
 
-final = readChar(paste0(path.declaration,"final.txt"),99999);
-draft = readChar(paste0(path.declaration,"draft.txt"),99999);
+```
 
-df = NULL;
-df = rbind(df, alphabetCounter(draft))
-df = rbind(df,alphabetCounter(final))
-rownames(df)=c("draft","final")
 

@@ -1,0 +1,72 @@
+    1  ifconfig
+    2  nslookup
+    3  ifconfig
+    4  xcode-select --install
+    5  xcode-select --install
+    6  xcode-select --install
+    7  /Users/maxburchett/Desktop/CST-201/IndividualAssignment/MergeSort ; exit;
+    8  main() insertionSort()
+    9  ls
+   10  g++
+   11  g++ --version
+   12  mkdir projects
+   13  cd projects
+   14  mkdir helloworld
+   15  cd helloworld
+   16  code .
+   17  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   18  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   19  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   20  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   21  sfdvsdfv<>LQOWieuwh
+   22  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   23  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   24  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   25  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   26  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   27  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   28  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   29  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   30  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   31  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   32  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   33  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   34  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   35  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   36  /Users/maxburchett/opt/anaconda3/bin/jupyter_mac.command ; exit;
+   37  which python3
+   38  git --version
+   39  -m pip --version
+   40  curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+   41  python -m pip --version
+   42  cd /
+   43  ls -al
+   44  mkdir /wsustats
+   45  sudo mkdir /wsustats
+   46  ls -al
+   47  sudo su
+   48  cd wsusstats
+   49  cd wsustats/
+   50  cd ..
+   51  sudo groups 
+   52  sudo id
+   53  sudo chown maxburchett /wsustats/
+   54  ls -al
+   55  cd /wsustats/github/MonteShaffer/
+   56  git clone https://github.com/MonteShaffer/humanVerse.git
+   57  git clone https://github.com/MonteShaffer/humanVerseWSU.git
+   58  git clone https://github.com/MonteShaffer/imdb.git
+   59  git clone https://github.com/MonteShaffer/WSU_STATS419_FALL2020.git
+   60  cd ..
+   61  cd maxburchett
+   62  git@github.com:maxburchett/WSU_STATS419_2021.git
+   63  git clone https://github.com/maxburchett/WSU_STATS419_2021.git
+   64  ls -al
+   65  cd WSU_STATS419_2021/functions/
+   66  touch functions-intro.R
+   67  cd ..
+   68  git add .
+   69  git status
+   70  git commit -m "first commit"
+   71  git push -u origin HEAD:main
+   72  history > history_for_print.txt
